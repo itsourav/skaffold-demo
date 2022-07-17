@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+build:
+  artifacts:
+    - image: skaffold-spring-boot-example
+      buildpacks:
+        builder: paketobuildpacks/builder:base
+  local: {}
+
+deploy:
+  kubectl:
+    manifests:
+      - k8s-*
